@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor · Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <h1>🩸 Become An User</h1>
+    <h2>Create your account</h2>
+
+    <form id="signupForm" novalidate>
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="signupPassword" placeholder="Enter your password" required minlength="6">
+          <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁️</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="confirmPassword" placeholder="Enter your confirm password" required>
+          <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">👁️</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bloodGroup">Blood Group</label>
+        <select id="bloodGroup" required>
+          <option value="" disabled selected>Select your blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your number" 
+               pattern="01[3-9][0-9]{8}" maxlength="11" minlength="11" 
+               title="Please enter a valid 11-digit BD number (e.g., 01712345678)." required>
+      </div>
+
+      <button type="submit" class="btn-primary" id="signupBtn">Sign Up</button>
+      <p id="signupMessage" class="message"></p>
+    </form>
+
+    <p class="switch-auth">Already have an account? <a href="login.html">Log in</a></p>
+    <p class="switch-auth" style="margin-top: 10px;"><a href="index.html">← Back to Home</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

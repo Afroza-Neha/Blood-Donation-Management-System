@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor · Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <div class="profile-info">
+        <div class="avatar">👤</div>
+        <div>
+          <h1 id="donorName">Donor Name</h1>
+          <p class="donor-email" id="donorEmail">donor@example.com</p>
+          <span class="badge" id="bloodBadge">O+</span>
+        </div>
+      </div>
+      <div class="availability-toggle">
+        <label class="switch">
+          <input type="checkbox" id="availabilityToggle" checked>
+          <span class="slider round"></span>
+        </label>
+        <span id="availabilityText">Available to donate</span>
+      </div>
+      <!-- ID added here for logout -->
+      <button class="btn-logout" id="logoutBtn">Log out</button>
+    </header>
+
+    <main class="dashboard-main">
+      <!-- Profile Card -->
+      <section class="card profile-card">
+        <h2>Profile</h2>
+        <ul class="profile-list">
+          <li><strong>Name:</strong> <span id="profileName">Donor Name</span></li>
+          <li><strong>Email:</strong> <span id="profileEmail">donor@example.com</span></li>
+          <li><strong>Blood group:</strong> <span id="profileBlood">O+</span></li>
+          <li><strong>Phone:</strong> <span id="profilePhone">01712345678</span></li>
+          <li><strong>Member since:</strong> <span id="memberSince">Jan 2025</span></li>
+        </ul>
+      </section>
+
+      <!-- Donation History Card -->
+      <section class="card history-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="margin: 0; border: none;">Donation History</h2>
+          <button id="addDonationBtn" style="background: #b22222; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem;">
+            + Log Donation
+          </button>
+        </div>
+        
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Units</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <!-- Data is injected by JS -->
+          </tbody>
+        </table>
+        <p class="total-donations">Total donations: <strong id="totalDonations">0</strong></p>
+      </section>
+
+      <!-- Availability Status Card -->
+      <section class="card status-card">
+        <h2>Availability Status</h2>
+        <div class="status-indicator" id="statusIndicator">
+          <span class="dot available"></span>
+          <span id="statusMessage">You are available to donate</span>
+        </div>
+        <p class="hint">Toggle the switch above to update your status.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
