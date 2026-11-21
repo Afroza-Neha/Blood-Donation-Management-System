@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be a Blood Donor</title>
+    <link rel="stylesheet" href="become-donor.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <div class="brand-title">Blood Donation Management System</div>
+        <nav class="nav-links">
+            <a href="find-donor.html" class="nav-btn">Find Donor</a>
+            <a href="become-donor.html" class="nav-btn active">Become a Donor</a>
+            <a href="request-blood.html" class="nav-btn">Request Blood</a>
+            <a href="index.html" class="nav-btn">Go to Home</a>
+        </nav>
+    </div>
+</header>
+
+<div class="form-container">
+    <h2>Be a Donor</h2>
+    <form id="becomeDonorForm" onsubmit="return validateBecomeDonorForm(event)" onreset="resetBecomeDonorForm()">
+        <div class="form-section">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Enter Your Full Name ">
+                <span id="fullNameError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob">
+                <span id="dobError" class="error-message"></span>
+            </div>
+            <div class="form-group full-span">
+                <label>Select Gender:</label>
+                <div class="inline-options">
+                    <div class="checkbox-group">
+                        <input type="radio" name="gender" value="Male" id="genderMale">
+                        <label for="genderMale">Male</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="gender" value="Female" id="genderFemale">
+                        <label for="genderFemale">Female</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="gender" value="Other" id="genderOther">
+                        <label for="genderOther">Other</label>
+                    </div>
+                </div>
+                <span id="genderError" class="error-message"></span>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="bloodGroup">Blood Group:</label>
+                <select id="bloodGroup">
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+                <span id="bloodGroupError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" min="50">
+                <span id="weightError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter Your Phone Numner">
+                <span id="phoneError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="Enter Your Email ">
+                <span id="emailError" class="error-message"></span>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="district">District / City:</label>
+                <input type="text" id="district" placeholder="e.g:Dhaka">
+                <span id="districtError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="location">Location / Area:</label>
+                <input type="text" id="location" placeholder="Type Area">
+                <span id="locationError" class="error-message"></span>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                <span id="passwordError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword">
+                <span id="confirmPasswordError" class="error-message"></span>
+            </div>
+            <div class="checkbox-group full-span">
+                <input type="checkbox" id="terms">
+                <label for="terms">I accept the terms and conditions</label>
+                <span id="termsError" class="error-message"></span>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button type="submit">Register as Donor</button>
+            <button type="reset">Reset</button>
+        </div>
+        <div class="contact-hotline">
+            <a href="tel:+16267">Contact with us: +16267 (24/7 Hotline)</a>
+            </div>
+        <div id="regSuccess" class="success-message"></div>
+        <div id="regError" class="error-message"></div>
+    </form>
+</div>
+<script src="become-donor.js"></script>
+</body>
+</html>
